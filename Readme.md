@@ -1,6 +1,6 @@
 # App
 
-Mapped Company Processes App.
+Mapped Processes App.
 
 ## RFs (Requisitos funcionais)
 
