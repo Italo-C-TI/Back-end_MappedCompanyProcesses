@@ -1,0 +1,12 @@
+version: "2.15"
+services:
+  process-mapping-pg:
+    container_name: process-mapping-pg
+    image: bitnami/postgresql
+    ports:
+      - 5433:5432
+    environment:
+      POSTGRESQL_USERNAME: ${POSTGRESQL_USERNAME}
+      POSTGRESQL_PASSWORD: ${POSTGRESQL_PASSWORD}
+      POSTGRESQL_DATABASE: ${POSTGRESQL_DATABASE}
+    restart: on-failure
