@@ -4,9 +4,26 @@ services:
     container_name: process-mapping-pg
     image: bitnami/postgresql
     ports:
-      - 5433:5432
+      - 5432:5432
     environment:
       POSTGRESQL_USERNAME: ${POSTGRESQL_USERNAME}
       POSTGRESQL_PASSWORD: ${POSTGRESQL_PASSWORD}
       POSTGRESQL_DATABASE: ${POSTGRESQL_DATABASE}
     restart: on-failure
+    networks:
+      - app-private-network
+
+  teste: 
+    container_name: container-italo-docker
+    image: sitalo/teste
+    ports:
+      - 3000:3000
+    depends_on:
+      - process-mapping-pg  
+    networks:
+      - app-private-network 
+    restart: on-failure  
+
+networks:
+  app-private-network:
+    name: app-private-network
