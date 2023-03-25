@@ -8,23 +8,26 @@ datasource db {
 }
 
 model Area {
-  id        String    @id @default(uuid())
-  name      String
-  processes Process[]
+  id          String      @id @default(uuid())
+  name        String
+  description String?
+  procedure   Procedure[]
+  update_at   DateTime    @default(now())
 
   @@map("areas")
 }
 
-model Process {
-  id           String    @id @default(uuid())
-  name         String
-  description  String?
-  created_at   DateTime  @default(now())
-  area         Area      @relation(fields: [areaId], references: [id])
-  areaId       String
-  SubProcesses Process[] @relation("processes")
-  Process      Process?  @relation("processes", fields: [processId], references: [id], onDelete: Cascade)
-  processId    String?
+model Procedure {
+  id          String      @id @default(uuid())
+  name        String
+  description String?
+  update_at   DateTime    @default(now())
+  area        Area?       @relation(fields: [areaId], references: [id], onDelete: Cascade)
+  areaId      String?
+  tools       String[]
+  procedureId String?
+  procedure   Procedure?  @relation("procedures", fields: [procedureId], references: [id], onDelete: Cascade)
+  procedures  Procedure[] @relation("procedures")
 
-  @@map("processes")
+  @@map("procedures")
 }
