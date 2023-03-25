@@ -1,14 +1,8 @@
-import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
+import { FastifyInstance } from "fastify";
 import { createNewArea, deleteArea, findAreaById, listAreas, updateArea } from "./controllers/area";
 import { createNewProcedure, deleteProcedure, findProcedureById, listProceduresByAreaIdOrProcedureId, updateProcedure } from "./controllers/procedure";
 
 export async function appRoutes(app: FastifyInstance) {
-    app.get('/', (req: FastifyRequest, res: FastifyReply) => {
-        return res.status(200).send(
-            "hello world"
-        )
-    })
-
     app.get('/areas', listAreas);
     app.post('/area', createNewArea);
     app.get('/area', findAreaById);

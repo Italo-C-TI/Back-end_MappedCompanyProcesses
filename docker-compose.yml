@@ -3,6 +3,8 @@ services:
   process-mapping-pg:
     container_name: process-mapping-pg
     image: bitnami/postgresql
+    volumes: 
+      - ./prisma/migrations/docker-database-initial.sql:/docker-entrypoint-initdb.d/docker-database-initial.sql
     ports:
       - 5432:5432
     environment:
@@ -13,9 +15,12 @@ services:
     networks:
       - app-private-network
 
-  teste: 
-    container_name: container-italo-docker
-    image: sitalo/teste
+
+  mapped-procedures-back-end: 
+    container_name: mapped-procedures-back-end
+    image: sitalo/mapped-procedures
+    environment:
+      DATABASE_URL: 'postgresql://costa_docker:void_docker@process-mapping-pg:5432/ProcessMappingDB?schema=public'
     ports:
       - 3000:3000
     depends_on:

@@ -6,7 +6,8 @@
   "scripts": {
     "build": "tsup src --out-dir build",
     "dev": "tsx watch src/server.ts",
-    "start": "npm run build && npx prisma generate && npx prisma migrate dev && node build/server.js"
+    "start": "npm run build && node build/server.js",
+    "start:migrate:prod": "npx prisma migrate deploy && npm run start"
   },
   "repository": {
     "type": "git",
