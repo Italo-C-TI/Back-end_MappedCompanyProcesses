@@ -15,7 +15,6 @@ services:
     networks:
       - app-private-network
 
-
   mapped-procedures-back-end: 
     container_name: mapped-procedures-back-end
     image: sitalo/mapped-procedures

@@ -11,7 +11,6 @@ export const createNewArea = async (req: FastifyRequest, res: FastifyReply) => {
 
     const { name, description } = bodySchema.parse(req.body);
 
-
     try {
         await prisma.area.create({
             data: { name, description },

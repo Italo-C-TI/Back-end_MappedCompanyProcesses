@@ -1,7 +1,7 @@
 {
-  "name": "back-end_mappedcompanyprocesses",
+  "name": "back-end-mapped-procedures",
   "version": "1.0.0",
-  "description": "Mapped Company Processes App.",
+  "description": "Mapped Procedures App.",
   "main": "src/app.ts",
   "scripts": {
     "build": "tsup src --out-dir build",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Italo-C-TI/Back-end_MappedCompanyProcesses.git"
+    "url": "git+https://github.com/Italo-C-TI/back-end-mapped-procedures.git"
   },
-  "author": "Italo.Costa",
+  "author": "Italo-C-TI",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Italo-C-TI/Back-end_MappedCompanyProcesses/issues"
+    "url": "https://github.com/Italo-C-TI/back-end-mapped-procedures/issues"
   },
-  "homepage": "https://github.com/Italo-C-TI/Back-end_MappedCompanyProcesses#readme",
+  "homepage": "https://github.com/Italo-C-TI/back-end-mapped-procedures",
   "dependencies": {
     "@prisma/client": "^4.11.0",
     "dotenv": "^16.0.3",
