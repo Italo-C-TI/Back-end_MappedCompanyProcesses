@@ -4,7 +4,7 @@ import { env } from './env';
 import fastifyCors from '@fastify/cors';
 
 app.register(fastifyCors, {
-    origin: '*',
+    origin: true,
 });
 
 app.listen({
