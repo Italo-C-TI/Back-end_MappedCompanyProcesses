@@ -1,7 +1,7 @@
 # Mapped Procedures App
 
-uma ferramenta que mapeia os processos e subprocessos de uma empresa dentro
-de cada área, permitindo o cadastro das entidades necessárias para trazer benefícios a organização.
+Uma ferramenta que mapeia os processos e subprocessos de uma empresa dentro
+de cada área, permitindo o cadastro de processos com as informações necessárias para trazer benefícios a organização.
 
 ## Autor
 
