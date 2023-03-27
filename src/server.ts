@@ -1,6 +1,11 @@
 require('dotenv').config();
 import { app } from './app';
 import { env } from './env';
+import fastifyCors from '@fastify/cors';
+
+app.register(fastifyCors, {
+    origin: '*',
+});
 
 app.listen({
     host: '0.0.0.0',
